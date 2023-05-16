@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'paperless-empire-test'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5621B033B3E6405687485219FFEE8F00 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4C7ED70377FD4BF5821798E063FDD7FE }}
           package: .
