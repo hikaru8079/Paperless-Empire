@@ -24,13 +24,13 @@
 多分使わんけど。
 
 * 入れとくと便利かもしてないVSCodeのプラグイン
+    - indent-rainbow
+    - Japanese Language Pack for Visual Studio Code
+    - Path Autocomplete
+    - HTML CSS Support
+    - JavaScript (ES6) code snippets
+    - Auto Rename Tag
+    - Auto Close Tag
+    - zenkaku
 バチクソにVSCode使いまくると思うんで楽に開発できるプラグイン挙げときます。
 左上らへんに何個かアイコンがならんでるやつの□があるやつ(拡張機能)ってとこクリックして名前で検索かければ入れれます。
-    indent-rainbow
-    Japanese Language Pack for Visual Studio Code
-    Path Autocomplete
-    HTML CSS Support
-    JavaScript (ES6) code snippets
-    Auto Rename Tag
-    Auto Close Tag
-    zenkaku
