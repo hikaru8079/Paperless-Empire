@@ -11,9 +11,10 @@
 ---
 
 ## 便利なコマンドとか
-`dotnet watch`
+* `dotnet watch`
 変更内容をリアルタイムで反映しながらサイトの動きを確認できます。
 
+* コードブロック
 ~~~html
 <pre>
     <code></code>
@@ -22,14 +23,14 @@
 コードブロックをいい感じで作れます(プラグインが入ってます)。言語は自動で識別してくれるハズ。
 多分使わんけど。
 
-### 入れとくと便利かもしてないVSCodeのプラグイン
+* 入れとくと便利かもしてないVSCodeのプラグイン
 バチクソにVSCode使いまくると思うんで楽に開発できるプラグイン挙げときます。
 左上らへんに何個かアイコンがならんでるやつの□があるやつ(拡張機能)ってとこクリックして名前で検索かければ入れれます。
-* indent-rainbow
-* Japanese Language Pack for Visual Studio Code
-* Path Autocomplete
-* HTML CSS Support
-* JavaScript (ES6) code snippets
-* Auto Rename Tag
-* Auto Close Tag
-* zenkaku
+    indent-rainbow
+    Japanese Language Pack for Visual Studio Code
+    Path Autocomplete
+    HTML CSS Support
+    JavaScript (ES6) code snippets
+    Auto Rename Tag
+    Auto Close Tag
+    zenkaku
