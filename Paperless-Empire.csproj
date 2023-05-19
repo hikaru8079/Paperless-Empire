@@ -7,4 +7,8 @@
     <RootNamespace>Paperless_Empire</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="newtonsoft.json" Version="13.0.3" />
+  </ItemGroup>
+
 </Project>
