@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "SourceHanCodeJPLight";
+    src: url("../lib/Fonts/SourceHanCodeJP/SourceHanCodeJP-Light.otf")
+        format("opentype");
+}
+
+@font-face {
+    font-family: "SourceHanCodeJPRegular";
+    src: url("../lib/Fonts/SourceHanCodeJP/SourceHanCodeJP-Regular.otf")
+        format("opentype");
+}
+
+@font-face {
+    font-family: "FiraCodeRetina";
+    src: url("../lib/Fonts/FiraCode/FiraCode-Retina.ttf")
+        format("truetype");
+}
+
+code {
+    font-family: "SourceHanCodeJPRegular";
+}
+
+/*Highlight.js 行番号*/
+pre {
+    counter-reset: rowNumber;
+}
+
+pre span.row-number {
+    counter-increment: rowNumber;
+}
+
+pre span.row-number::before {
+    content: counter(rowNumber);
+    width: 2rem;
+    display: inline-block;
+    color: #aaa;
+}
+
+/*htmlタグのclassにfont-change-1指定で以下動作*/
+.font-change-1 {
+    font-family: "";
+}
