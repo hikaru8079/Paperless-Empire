@@ -1,6 +1,19 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Paperless_Empire.Models;
+using Microsoft.AspNetCore.Mvc.Filters;
+using System;
+using System.Net.Http;
+using System.Net;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
+using System.Text;
+using System.Text.Encodings.Web;
+using System.Security.Claims;
+using System.Text.Json;
+using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Paperless_Empire.Controllers;
 
