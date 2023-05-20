@@ -16,6 +16,18 @@
         format("truetype");
 }
 
+@font-face {
+    font-family: "IBMPlexSansJPText";
+    src: url("../lib/Fonts/IBM-Plex-Sans-JP/IBMPlexSansJP-Text.otf")
+        format("opentype");
+}
+
+@font-face {
+    font-family: "NotoSansJPRegular";
+    src: url("../lib/Fonts/Noto_Sans_JP/NotoSansJP-Regular.otf")
+        format("opentype");
+}
+
 code {
     font-family: "SourceHanCodeJPRegular";
 }
@@ -36,7 +48,11 @@ pre span.row-number::before {
     color: #aaa;
 }
 
-/*htmlタグのclassにfont-change-1指定で以下動作*/
+/*htmlタグのclassにfont-change-x指定で以下動作*/
 .font-change-1 {
-    font-family: "";
+    font-family: "IBMPlexSansJPText";
+}
+
+.font-change-2 {
+    font-family: "NotoSansJPRegular";
 }
