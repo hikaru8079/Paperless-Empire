@@ -2,6 +2,138 @@
     ViewData["Title"] = "公欠情報登録";
 }
 
-<h2 class="text-center">公欠届提出</h2>
-<p class="text-center">公欠の情報を提出します。以下の内容を記入してください。</p>
+<div class="text-center">
+    <h2>公欠届提出</h2>
+    <p>公欠の情報を提出します。以下の内容を記入してください。</p>
+    <p><strong>申請は<mark>1日毎</mark>となります。</strong></p>
+</div>
 
+<form>
+<!-- クラスクラス号 -->
+    <div class="my-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">学籍番号</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="入力してください">
+        </div>
+    </div>
+<!-- 学科 -->
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">学科</label>
+        <div class="col">
+            <select class="form-select">
+                <option>選択してください</option>
+                <option>ITスペシャリスト科</option>
+                <option>情報処理科</option>
+                <option>ネットワークセキュリティ科</option>
+                <option>AIシステム科</option>
+                <option>情報ビジネス科</option>
+            </select>
+        </div>
+    </div>
+<!-- 学年 -->
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">学年</label>
+        <div class="col">
+            <select class="form-select">
+                <option>選択してください</option>
+                <option>1年</option>
+                <option>2年</option>
+                <option>3年</option>
+                <option>4年</option>
+            </select>
+        </div>
+    </div>
+<!-- クラス -->
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">クラス</label>
+        <div class="col">
+            <select class="form-select">
+                <option>選択してください</option>
+                <option>1組</option>
+                <option>2組</option>
+                <option>3組</option>
+                <option>4組</option>
+                <option>5組</option>
+                <option>6組</option>
+            </select>
+        </div>
+    </div>
+<!-- 氏名 -->
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">氏名</label>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="入力してください">
+        </div>
+    </div>
+<!-- 公欠日 -->
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">公欠日</label>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="年" aria-label="First name">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="月" aria-label="Last name">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="日" aria-label="Last name">
+        </div>
+    </div>
+<!-- 欠席時限 -->
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">欠席時限</label>
+        <div class="col form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+            <label class="form-check-label" for="inlineCheckbox1">1時限</label>
+        </div>
+        <div class="col form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+            <label class="form-check-label" for="inlineCheckbox2">2時限</label>
+        </div>
+        <div class="col form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+            <label class="form-check-label" for="inlineCheckbox3">3時限</label>
+        </div>
+        <div class="col form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+            <label class="form-check-label" for="inlineCheckbox4">4時限</label>
+        </div>
+        <div class="col form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+            <label class="form-check-label" for="inlineCheckbox5">5時限</label>
+        </div>
+        <div class="col form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+            <label class="form-check-label" for="inlineCheckbox6">6時限</label>
+        </div>
+        <div class="col form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
+            <label class="form-check-label" for="inlineCheckbox7">7時限</label>
+        </div>
+        <div class="col form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option8">
+            <label class="form-check-label" for="inlineCheckbox8">8時限</label>
+        </div>
+    </div>
+<!-- 活動内容 -->
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">活動内容</label>
+        <div class="col">
+            <select class="form-select">
+                <option>選択してください</option>
+                <option>合同説明会</option>
+                <option>説明会</option>
+                <option>試験</option>
+                <option>研修</option>
+                <option>その他</option>
+            </select>
+        </div>
+    </div>
+<!-- 企業名 -->
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">企業名/主催者</label>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="入力してください">
+        </div>
+    </div>
+
+</form>
