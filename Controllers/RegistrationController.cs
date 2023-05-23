@@ -8,4 +8,7 @@ public class RegistrationController : Controller
     public IActionResult Index(){
         return View();
     }
+    public IActionResult Check(){
+        return View();
+    }
 }

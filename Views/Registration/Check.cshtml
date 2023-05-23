@@ -1,0 +1,75 @@
+@{
+    ViewData["Title"] = "入力内容確認";
+}
+
+<div class="text-center">
+    <h2>入力内容確認</h2>
+    <p>以下の内容で間違い無ければ、「送信する」ボタンを押してください。</p>
+</div>
+<!--学籍番号-->
+<div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">学籍番号</label>
+    <div class="col">
+        <div class="form-control-plaintext" id=""></div>
+    </div>
+</div>
+<!--学科-->
+<div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">学科</label>
+    <div class="col">
+        <div class="form-control-plaintext" id=""></div>
+    </div>
+</div>
+<!--学年-->
+<div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">学年</label>
+    <div class="col">
+        <div class="form-control-plaintext" id=""></div>
+    </div>
+</div>
+<!--クラス-->
+<div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">クラス</label>
+    <div class="col">
+        <div class="form-control-plaintext" id=""></div>
+    </div>
+</div>
+<!--氏名-->
+<div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">氏名</label>
+    <div class="col">
+        <div class="form-control-plaintext" id=""></div>
+    </div>
+</div>
+<!--公欠日-->
+<div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">公欠日</label>
+    <div class="col">
+        <div class="form-control-plaintext" id=""></div>
+    </div>
+</div>
+<!--欠席時限-->
+<div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">欠席時限</label>
+    <div class="col">
+        <div class="form-control-plaintext" id=""></div>
+    </div>
+</div>
+<!--活動内容-->
+<div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">活動内容</label>
+    <div class="col">
+        <div class="form-control-plaintext" id=""></div>
+    </div>
+</div>
+<!--企業名/主催者-->
+<div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">企業名/主催者</label>
+    <div class="col">
+        <div class="form-control-plaintext" id=""></div>
+    </div>
+</div>
+<!--送信ボタン-->
+<div class="text-center">
+    <button class="btn btn-primary mb-3" type="submit" asp-controller="Registration" asp-action="Check">送信する</button>
+</div>
