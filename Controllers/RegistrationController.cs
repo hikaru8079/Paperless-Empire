@@ -13,4 +13,8 @@ public class RegistrationController : Controller
     {
         return View();
     }
+        public IActionResult Complete()
+    {
+        return View();
+    }
 }

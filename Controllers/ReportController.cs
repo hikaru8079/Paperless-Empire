@@ -17,4 +17,8 @@ public class ReportController : Controller
     {
         return View();
     }
+        public IActionResult Complete()
+    {
+        return View();
+    }
 }
