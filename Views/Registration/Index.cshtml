@@ -2,7 +2,7 @@
     ViewData["Title"] = "公欠情報登録";
 }
 
-<div class="text-center">
+<div class="text-center mb-3">
     <h2>公欠届提出</h2>
     <p>公欠の情報を提出します。以下の内容を記入してください。</p>
     <p><strong>申請は<mark>1日毎</mark>となります。</strong></p>
@@ -132,12 +132,12 @@
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">企業名/主催者</label>
         <div class="col">
-            <input type="text" class="form-control" placeholder="入力してください" required>
+            <input type="text" class="form-control" placeholder="企業が複数ある場合は、1社ずつ、活動企業数分を提出してください。" required>
         </div>
     </div>
     <!--確認画面遷移ボタン-->
-    <div class="d-grid col-2 mx-auto">
-        <button class="btn btn-primary mb-3" type="submit" asp-controller="Registration"
+    <div class="text-center">
+        <button class="btn btn-primary " type="submit" asp-controller="Registration"
             asp-action="Check">入力内容を確認する</button>
     </div>
 
