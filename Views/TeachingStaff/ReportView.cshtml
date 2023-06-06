@@ -1,0 +1,136 @@
+@{
+    ViewData["Title"] = "活動報告詳細";
+}
+
+<div class="container">
+    <div class="row">
+        <!--サイドバー-->
+        <div class="col-auto">
+            <nav class="bg-light sidebar">
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link">
+                            <icon class="bi bi-bell"></icon>
+                            新着公欠届
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-muted">
+                            <icon class="bi bi-app-indicator"></icon>
+                            公欠届未承認一覧
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-muted">
+                            <icon class="bi bi-file-earmark-text"></icon>
+                            活動報告一覧
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-muted">
+                            <icon class="bi bi-app-indicator"></icon>
+                            活動報告未承認一覧
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-muted">
+                            <icon class="bi bi-search"></icon>
+                            公欠届照会・検索
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-muted">
+                            <icon class="bi bi-hourglass-split"></icon>
+                            CSC確認待ち一覧
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-muted">
+                            <icon class="bi bi-gear"></icon>
+                            設定
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!--詳細表示-->
+        <div class="col">
+            <div class="row mb-3">
+                <a onclick="window.history.back(); return false;" class="col-1 text-left bi bi-chevron-left text-body"
+                    style="font-size: 2rem;"></a>
+                <h2 class="col text-center">活動報告詳細</h2>
+            </div>
+            <div class="row justify-content-between">
+                <div class="col-auto">
+                    <p>登録日時</p>
+                    <p>公欠日</p>
+                    <p>学籍番号</p>
+                    <p>氏名</p>
+                    <p>活動内容</p>
+                    <p>企業名/主催者</p>
+                </div>
+                <div class="col-8">
+                    <!--バックエンド側でDivタグにして動的に値差し込んでね-->
+                    <p>2023/7/5 11:00:23</p>
+                    <p>G020C1054</p>
+                    <p>IS</p>
+                    <p>4</p>
+                    <p>2</p>
+                    <p>大賀光輝</p>
+
+                </div>
+            </div>
+            <button type="button" class="btn btn-info" data-bs-toggle="collapse" data-bs-target="#collapse"><icon class="bi bi-arrow-bar-down"></icon> 公欠届のその他の情報を表示する</button>
+            <div class="collapse mt-3" id="collapse">
+                <div class="row justify-content-between">
+                    <div class="col-auto">
+                        <p></p>
+                        <p>学科</p>
+                        <p>学年</p>
+                        <p>クラス</p>
+                        <p>欠席時限</p>
+                        <p>教科</p>
+                        <p>公欠届承認日時</p>
+                        <p>承認者/確認者</p>
+                    </div>
+                    <div class="col-8">
+
+                    </div>
+                </div>
+            </div>
+            <!--操作ボタン-->
+            <!--承認済みか却下済み/確認前の未確認戻しの場合はエラーが出るかDisabledにしてボタン押せないようにしたい-->
+            <div class="row d-flex justify-content-center my-5">
+                <div class="col-auto">
+                    <button type="button" class="btn btn-outline-success">
+                        <icon class="bi bi-check-square-fill"></icon> 承認する(公欠として処理し、教務/CSCへ確認を促す)
+                    </button>
+                </div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-outline-danger">
+                        <icon class="bi bi-x-square-fill"></icon> 却下する(学生へ再報告を促す)
+                    </button>
+                </div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+                        data-bs-target="#cyuui">
+                        <icon class="bi bi-exclamation-square-fill"></icon> 未確認の状態へ戻す
+                    </button>
+                </div>
+                <!-- 未承認に戻す時のモーダル -->
+                <div class="modal fade" id="cyuui" tabindex="-1" aria-labelledby="cyuuiLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="cyuuiLabel">注意</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                未承認の状態へ戻した場合、<mark>改めて承認/却下の操作を行う必要があります。</mark>よろしいですか？
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取りやめる</button>
+                                <!--↓このボタンをトリガーに未確認処理を始めてくれ-->
+                                <button type="button" class="btn btn-primary">未承認の状態へ戻す</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

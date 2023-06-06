@@ -2,9 +2,19 @@
     ViewData["Title"] = "入力内容確認";
 }
 
+<!--説明文-->
 <div class="text-center">
     <h2>入力内容確認</h2>
     <p>以下の内容で間違い無ければ、「送信する」ボタンを押してください。</p>
+</div>
+<!--プログレスバー-->
+<div class="position-relative my-5 mx-3">
+    <div class="progress" style="height: 1px;">
+        <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">1</button>
+    <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">2</button>
+    <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill" style="width: 2rem; height:2rem;">3</button>
 </div>
 <!--学籍番号-->
 <div class="mb-3 row">
@@ -71,5 +81,5 @@
 </div>
 <!--送信ボタン-->
 <div class="text-center">
-    <button class="btn btn-primary mb-3" type="submit" asp-controller="Registration" asp-action="Check">送信する</button>
+    <a class="btn btn-primary mb-3" asp-controller="Registration" asp-action="Complete">送信する</a>
 </div>

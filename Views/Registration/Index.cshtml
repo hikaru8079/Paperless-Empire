@@ -1,17 +1,27 @@
 @{
     ViewData["Title"] = "公欠情報登録";
 }
-
+<!--説明文-->
 <div class="text-center mb-3">
     <h2>公欠届提出</h2>
     <p>公欠の情報を提出します。以下の内容を記入してください。</p>
     <p><strong>申請は<mark>1日毎</mark>となります。</strong></p>
+    <p>事前に公欠日が分かっている場合、<mark><strong>1週間前</strong></mark>までに申請してください。</p>
+</div>
+<!--プログレスバー-->
+<div class="position-relative my-5 mx-3">
+    <div class="progress" style="height: 1px;">
+        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">1</button>
+    <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-secondary rounded-pill" style="width: 2rem; height:2rem;">2</button>
+    <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill" style="width: 2rem; height:2rem;">3</button>
 </div>
 
 <form>
     <!-- 学籍番号 -->
     <div class="my-3 row">
-        <label for="staticEmail" class="col-sm-2 col-form-label">学籍番号</label>
+        <label class="col-sm-2 col-form-label">学籍番号</label>
         <div class="col-sm-10">
             <input type="text" class="form-control" placeholder="入力してください" required>
         </div>
@@ -112,6 +122,13 @@
         <div class="col form-check form-check-inline">
             <input class="form-check-input" type="checkbox">
             <label class="form-check-label">4時限-後半</label>
+        </div>
+    </div>
+    <!-- 教科 -->
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">教科</label>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="入力してください" required>
         </div>
     </div>
     <!-- 活動内容 -->

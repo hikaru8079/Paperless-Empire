@@ -2,15 +2,23 @@
     ViewData["Title"] = "活動報告";
 }
 
+<!--説明文-->
 <div class="text-center mb-3">
     <h2>活動報告提出</h2>
     <p>提出済みの公欠届に対する活動報告を提出します。以下の内容を記入してください。</p>
 </div>
 
-<!--提出済み公欠届から抽出したい-->
+<!--ここら辺は提出済み公欠届から抽出したい-->
 <!--公欠日-->
 <div class="mb-3 row">
     <label class="col-sm-2 col-form-label">公欠日</label>
+    <div class="col">
+        <div class="form-control-plaintext" id=""></div>
+    </div>
+</div>
+<!--欠席時限・科目名-->
+<div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">欠席時限・科目名</label>
     <div class="col">
         <div class="form-control-plaintext" id=""></div>
     </div>
@@ -29,6 +37,7 @@
         <div class="form-control-plaintext" id=""></div>
     </div>
 </div>
+
 <!--活動報告フォーム-->
 <form>
     <!--提出書類-->
@@ -102,28 +111,28 @@
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">適性テスト(種類・内容)</label>
         <div class="col">
-            <input type="text" class="form-control" placeholder="入力してください">
+            <input type="text" class="form-control" style="height: 100px" placeholder="入力してください">
         </div>
     </div>
     <!--一般常識-->
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">一般常識(内容)</label>
         <div class="col">
-            <input type="text" class="form-control" placeholder="入力してください">
+            <input type="text" class="form-control" style="height: 100px" placeholder="入力してください">
         </div>
     </div>
     <!--専門科目-->
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">専門科目(内容)</label>
         <div class="col">
-            <input type="text" class="form-control" placeholder="入力してください">
+            <input type="text" class="form-control" style="height: 100px" placeholder="入力してください">
         </div>
     </div>
     <!--作文・小論文-->
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">作文・小論文(課題名)</label>
         <div class="col">
-            <input type="text" class="form-control" placeholder="入力してください">
+            <input type="text" class="form-control" style="height: 100px" placeholder="入力してください">
         </div>
     </div>
     <!--面接試験-->
@@ -142,14 +151,14 @@
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">面接試験(質問事項)</label>
         <div class="col">
-            <input type="text" class="form-control" placeholder="入力してください">
+            <input type="text" class="form-control" style="height: 100px" placeholder="入力してください">
         </div>
     </div>
     <!--受験の感想(アドバイス等)-->
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">受験の感想(アドバイス等)</label>
         <div class="col">
-            <input type="text" class="form-control" placeholder="入力してください">
+            <input type="text" class="form-control" style="height: 100px" placeholder="入力してください">
         </div>
     </div>
     <!--入力内容確認ボタン-->
