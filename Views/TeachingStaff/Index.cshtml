@@ -5,39 +5,13 @@
 <div class="container">
     <div class="row">
         <!--サイドバー-->
-        <div class="col-auto">
-            <nav class="bg-light sidebar">
-                <ul class="nav flex-column">
-                    <li class="nav-item"><a class="nav-link"><icon class="bi bi-bell" viewBox="0 0 16 16"></icon>
-                            新着公欠届</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link text-muted"><icon class="bi bi-app-indicator"></icon>
-                            公欠届未承認一覧</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link text-muted"><icon class="bi bi-file-earmark-text"></icon>
-                            活動報告一覧</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link text-muted"><icon class="bi bi-app-indicator"></icon>
-                            活動報告未承認一覧</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link text-muted"><icon class="bi bi-search"></icon>
-                            公欠届照会・検索</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link text-muted"><icon class="bi bi-hourglass-split"></icon>
-                            CSC確認待ち一覧</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link text-muted"><icon class="bi bi-gear"></icon>
-                            設定</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+        <partial name="_StaffSideBar" />
         <!--一覧表-->
         <div class="col">
             <!--上のボタンとか-->
             <div class="d-flex justify-content-end mb-3">
                 <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse">
-                    <icon class="bi bi-filter"></icon>  絞り込み
+                    <icon class="bi bi-filter"></icon> 絞り込み
                 </button>
             </div>
             <div class="collapse" id="collapse">

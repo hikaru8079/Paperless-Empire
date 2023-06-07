@@ -5,47 +5,7 @@
 <div class="container">
     <div class="row">
         <!--サイドバー-->
-        <div class="col-auto">
-            <nav class="bg-light sidebar">
-                <ul class="nav flex-column">
-                    <li class="nav-item"><a class="nav-link">
-                            <icon class="bi bi-bell"></icon>
-                            新着公欠届
-                        </a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link text-muted">
-                            <icon class="bi bi-app-indicator"></icon>
-                            公欠届未承認一覧
-                        </a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link text-muted">
-                            <icon class="bi bi-file-earmark-text"></icon>
-                            活動報告一覧
-                        </a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link text-muted">
-                            <icon class="bi bi-app-indicator"></icon>
-                            活動報告未承認一覧
-                        </a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link text-muted">
-                            <icon class="bi bi-search"></icon>
-                            公欠届照会・検索
-                        </a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link text-muted">
-                            <icon class="bi bi-hourglass-split"></icon>
-                            CSC確認待ち一覧
-                        </a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link text-muted">
-                            <icon class="bi bi-gear"></icon>
-                            設定
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+        <partial name="_StaffSideBar" />
         <!--詳細表示-->
         <div class="col">
             <div class="row mb-3">
@@ -61,23 +21,29 @@
                     <p>氏名</p>
                     <p>活動内容</p>
                     <p>企業名/主催者</p>
+                    <p>提出書類</p>
+                    <p>訪問企業住所</p>
+                    <p>筆記試験</p>
+                    <p>適性テスト(種類・内容)v</p>
+                    <p>一般常識(内容)</p>
+                    <p>専門科目(内容)</p>
+                    <p>作文・小論文(課題名)</p>
+                    <p>面接試験</p>
+                    <p>面接試験(質問事項)</p>
+                    <p>受験の感想(アドバイス等)</p>
                 </div>
                 <div class="col-8">
                     <!--バックエンド側でDivタグにして動的に値差し込んでね-->
-                    <p>2023/7/5 11:00:23</p>
-                    <p>G020C1054</p>
-                    <p>IS</p>
-                    <p>4</p>
-                    <p>2</p>
-                    <p>大賀光輝</p>
-
+                    <p>この位置にそれぞれの値が載ります</p>
                 </div>
             </div>
-            <button type="button" class="btn btn-info" data-bs-toggle="collapse" data-bs-target="#collapse"><icon class="bi bi-arrow-bar-down"></icon> 公欠届のその他の情報を表示する</button>
+            <button type="button" class="btn btn-info btn-sm" data-bs-toggle="collapse" data-bs-target="#collapse">
+                <icon class="bi bi-arrow-bar-down"></icon> 公欠届のその他の情報を表示する
+            </button>
             <div class="collapse mt-3" id="collapse">
                 <div class="row justify-content-between">
                     <div class="col-auto">
-                        <p></p>
+                        <p>公欠届登録日時</p>
                         <p>学科</p>
                         <p>学年</p>
                         <p>クラス</p>
@@ -87,20 +53,21 @@
                         <p>承認者/確認者</p>
                     </div>
                     <div class="col-8">
-
+                        <p>この位置にそれぞれの値が載ります</p>
                     </div>
                 </div>
             </div>
             <!--操作ボタン-->
             <!--承認済みか却下済み/確認前の未確認戻しの場合はエラーが出るかDisabledにしてボタン押せないようにしたい-->
-            <div class="row d-flex justify-content-center my-5">
+            <div class="row d-flex justify-content-center mt-3">
                 <div class="col-auto">
                     <button type="button" class="btn btn-outline-success">
                         <icon class="bi bi-check-square-fill"></icon> 承認する(公欠として処理し、教務/CSCへ確認を促す)
                     </button>
                 </div>
                 <div class="col-auto">
-                    <button type="button" class="btn btn-outline-danger">
+                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="collapse"
+                        data-bs-target="#collapse2">
                         <icon class="bi bi-x-square-fill"></icon> 却下する(学生へ再報告を促す)
                     </button>
                 </div>
@@ -109,6 +76,19 @@
                         data-bs-target="#cyuui">
                         <icon class="bi bi-exclamation-square-fill"></icon> 未確認の状態へ戻す
                     </button>
+                </div>
+                <!--拒否ボタン押した時の理由入力展開-->
+                <div class="collapse" id="collapse2">
+                    <div class="row mt-3">
+                        <div class="col-auto">
+                            <p>再報告とする理由を入力してください。</p>
+                            <button type="button" class="btn btn-primary">送信する</button>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control mb-2" placeholder="入力してください">
+                            <p>※学生へ理由と共に再提出を促す通知が送信されます</p>
+                        </div>
+                    </div>
                 </div>
                 <!-- 未承認に戻す時のモーダル -->
                 <div class="modal fade" id="cyuui" tabindex="-1" aria-labelledby="cyuuiLabel" aria-hidden="true">
