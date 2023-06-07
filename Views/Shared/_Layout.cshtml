@@ -9,11 +9,10 @@
     <link rel="stylesheet" href="~/lib/Highlight.js/tokyo-night-dark.min.css">
     <link rel="stylesheet" href="~/css/site.css">
     <link rel="stylesheet" href="~/lib/Bootstrap-icons/bootstrap-icons.css" />
-    <!--partial name="_Favicons" /-->
+    <partial name="_Favicons" />
 </head>
 
 <body>
-    @model AccountInfo
     <!-- ナビゲーションバー -->
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light border-bottom sticky-top">
@@ -29,7 +28,7 @@
                 <ul class="navbar-nav nav nav-pills">
                     <li class="nav-item"><a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link text-dark" href="/.auth/logout">logout @Model.Name @ViewBag.Name</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="/.auth/logout">logout</a></li>
                 </ul>
             </div>
         </nav>

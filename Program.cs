@@ -1,9 +1,10 @@
-/*var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddHttpClient();
 var app = builder.Build();
-if (!app.Environment.IsDevelopment()){
+if (!app.Environment.IsDevelopment())
+{
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
@@ -11,24 +12,22 @@ app.UseStatusCodePages();
 app.UseHttpsRedirection();
 app.UseHttpLogging();
 app.UseRouting();
-
-app.UseFileServer();
-app.UseStaticFiles();
-
+//app.UseFileServer();
+//app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-app.Run();*/
-using Microsoft.AspNetCore.Authentication.Cookies;
+app.Run();
+
+/*using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
 namespace Paperless_Empire
 {
     public class Startup
@@ -37,9 +36,7 @@ namespace Paperless_Empire
         {
             Configuration = configuration;
         }
-
         public IConfiguration Configuration { get; }
-
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAuthentication(options =>
@@ -59,7 +56,6 @@ namespace Paperless_Empire
             services.AddCors();
             services.AddControllersWithViews();
         }
-
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -71,20 +67,15 @@ namespace Paperless_Empire
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
-
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
-
             app.UseCors(builder => builder
                 .AllowAnyOrigin()
                 .AllowAnyMethod()
                 .AllowAnyHeader());
-
             app.UseAuthentication();
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
@@ -98,7 +89,6 @@ namespace Paperless_Empire
             {
                 CreateHostBuilder(args).Build().Run();
             }
-
             public static IHostBuilder CreateHostBuilder(string[] args) =>
                 Host.CreateDefaultBuilder(args)
                     .ConfigureWebHostDefaults(webBuilder =>
@@ -107,4 +97,4 @@ namespace Paperless_Empire
                     });
         }
     }
-}
+}*/
