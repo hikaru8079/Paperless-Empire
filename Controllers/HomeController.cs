@@ -29,9 +29,6 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        var user = HttpContext.User;
-        var name = user.Identity.Name;
-        var email = user.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value;
         return View();
     }
 
