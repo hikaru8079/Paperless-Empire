@@ -27,20 +27,12 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public async Task<IActionResult> Index()
+    public IActionResult Index()
     {
-        if (User.Identity.IsAuthenticated)
-        {
-            // ユーザーが認証済みの場合、アカウント情報を参照して利用します。
-            var accessToken = await HttpContext.GetTokenAsync("access_token");
-            // アクセストークンを使用してGoogle APIにリクエストを送信し、ユーザーの情報を取得します。
-            return View();
-        }
-        else
-        {
-            // ユーザーが認証されていない場合、認証ページにリダイレクトします。
-            return Challenge();
-        }
+        var user = HttpContext.User;
+        var name = user.Identity.Name;
+        var email = user.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value;
+        return View();
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
