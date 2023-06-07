@@ -52,6 +52,9 @@ namespace Paperless_Empire
                 {
                     options.ClientId = "460495496695-5heioc6j9rsmvd4uoudcbmehmloinofu.apps.googleusercontent.com";
                     options.ClientSecret = "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";
+                    options.Scope.Add("openid");
+                    options.Scope.Add("profile");
+                    options.Scope.Add("email");
                 });
             services.AddCors();
             services.AddControllersWithViews();

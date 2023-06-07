@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Authentication;
 
 namespace Paperless_Empire.Controllers;
 
+
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
@@ -29,12 +30,16 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        string name = User.Identity.Name;
-        string email = User.FindFirstValue("email");
-        ViewBag.Name = name;
-        ViewBag.Email = email;
+        var accountInfo = new AccountInfo();
 
-        return View();
+    // 認証済みの場合はアカウント情報を取得する
+        if (User.Identity.IsAuthenticated)
+        {
+            accountInfo.Name = User.FindFirstValue(ClaimTypes.Name);
+            accountInfo.Email = User.FindFirstValue(ClaimTypes.Email);
+        }
+
+        return View(accountInfo);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
