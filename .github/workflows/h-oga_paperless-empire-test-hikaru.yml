@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'paperless-empire-test-hikaru'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_77002264C38F45C3A268382AA29AB961 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7CD7F69FB56E446A820A2464F268D40F }}
           package: .
