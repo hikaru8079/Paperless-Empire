@@ -12,8 +12,8 @@ app.UseStatusCodePages();
 app.UseHttpsRedirection();
 app.UseHttpLogging();
 app.UseRouting();
-//app.UseFileServer();
-//app.UseStaticFiles();
+app.UseFileServer();
+app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllerRoute(
