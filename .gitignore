@@ -1,3 +1,4 @@
 bin/
-.vscode/
 obj/
+Paperless-Empire.sln
+Dockerfile

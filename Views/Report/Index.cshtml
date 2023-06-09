@@ -1,3 +1,19 @@
 @{
-    ViewData["Title"] = "活動報告";
+    ViewData["Title"] = "公欠届選択";
 }
+
+<div class="text-center">
+    <h2>報告対象公欠届選択</h2>
+    <p>活動報告を提出する公欠届を選択してください。</p>
+    <form>
+        <select class="form-select mb-3 col" required>
+            <option selected disabled value="">選択してください</option>
+            <option>a</option>
+            <div id=""></div>
+        </select>
+        <div class="text-center">
+            <button class="btn btn-primary mb-3" type="submit" asp-controller="Report"
+                asp-action="Entry">登録を開始する</button>
+        </div>
+    </form>
+</div>
