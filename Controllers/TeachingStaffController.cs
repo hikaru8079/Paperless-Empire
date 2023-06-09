@@ -5,7 +5,16 @@ using Paperless_Empire.Models;
 namespace Paperless_Empire.Controllers;
 public class TeachingStaffController : Controller
 {
-    public IActionResult Index(){
+    public IActionResult Index()
+    {
+        return View();
+    }
+    public IActionResult Detail()
+    {
+        return View();
+    }
+    public IActionResult ReportView()
+    {
         return View();
     }
 }

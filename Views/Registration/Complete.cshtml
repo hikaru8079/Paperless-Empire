@@ -1,0 +1,28 @@
+@{
+    ViewData["Title"] = "提出完了";
+}
+
+<!--できれば非同期処理が終わった後に表示させて-->
+
+<!--プログレスバー-->
+<div class="position-relative my-5 mx-3">
+    <div class="progress" style="height: 1px;">
+        <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+    <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill"
+        style="width: 2rem; height:2rem;">1</button>
+    <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill"
+        style="width: 2rem; height:2rem;">2</button>
+    <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-primary rounded-pill"
+        style="width: 2rem; height:2rem;">3</button>
+</div>
+<!--文章-->
+<div class="text-center">
+    <h2>提出完了</h2>
+    <p>提出が完了しました。</p>
+    <p>内容に問題が無かった場合は、活動日に活動報告の案内メールをお送りします。</p>
+    <p>活動が終了しましたら、メールに記載のURLより、活動報告を提出してください。</p>
+    <p>内容に問題があった場合、理由と共にその旨をメールで通知します。</p>
+    <p>その際は、理由を踏まえた上で、改めて公欠届を提出してください。</p>
+</div>
