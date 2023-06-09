@@ -1,3 +1,167 @@
 @{
     ViewData["Title"] = "公欠情報登録";
 }
+<!--説明文-->
+<div class="text-center mb-3">
+    <h2>公欠届提出</h2>
+    <p>公欠の情報を提出します。以下の内容を記入してください。</p>
+    <p><strong>申請は<mark>1日毎</mark>となります。</strong></p>
+    <p>事前に公欠日が分かっている場合、<mark><strong>1週間前</strong></mark>までに申請してください。</p>
+</div>
+<!--プログレスバー-->
+<div class="position-relative my-5 mx-3">
+    <div class="progress" style="height: 1px;">
+        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+    <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill"
+        style="width: 2rem; height:2rem;">1</button>
+    <button type="button"
+        class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-secondary rounded-pill"
+        style="width: 2rem; height:2rem;">2</button>
+    <button type="button"
+        class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill"
+        style="width: 2rem; height:2rem;">3</button>
+</div>
+
+<form>
+    <!-- 学籍番号 -->
+    <div class="my-3 row">
+        <label class="col-sm-2 col-form-label">学籍番号</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="入力してください" required>
+        </div>
+    </div>
+    <!-- 学科 -->
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">学科</label>
+        <div class="col">
+            <select class="form-select" required>
+                <option selected disabled value="">選択してください</option>
+                <option>ITスペシャリスト科</option>
+                <option>情報処理科</option>
+                <option>ネットワークセキュリティ科</option>
+                <option>AIシステム科</option>
+                <option>情報ビジネス科</option>
+            </select>
+        </div>
+    </div>
+    <!-- 学年 -->
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">学年</label>
+        <div class="col">
+            <select class="form-select" required>
+                <option selected disabled value="">選択してください</option>
+                <option>1年</option>
+                <option>2年</option>
+                <option>3年</option>
+                <option>4年</option>
+            </select>
+        </div>
+    </div>
+    <!-- クラス -->
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">クラス</label>
+        <div class="col">
+            <select class="form-select" required>
+                <option selected disabled value="">選択してください</option>
+                <option>1組</option>
+                <option>2組</option>
+                <option>3組</option>
+                <option>4組</option>
+                <option>5組</option>
+                <option>6組</option>
+            </select>
+        </div>
+    </div>
+    <!-- 氏名 -->
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">氏名</label>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="入力してください" required>
+        </div>
+    </div>
+    <!-- 公欠日 -->
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">公欠日</label>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="年" required>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="月" required>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="日" required>
+        </div>
+    </div>
+    <!-- 欠席時限 -->
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">欠席時限</label>
+        <div class="col form-check form-check-inline">
+            <input class="form-check-input" type="checkbox">
+            <label class="form-check-label">1時限-前半</label>
+        </div>
+        <div class="col form-check form-check-inline">
+            <input class="form-check-input" type="checkbox">
+            <label class="form-check-label">1時限-後半</label>
+        </div>
+        <div class="col form-check form-check-inline">
+            <input class="form-check-input" type="checkbox">
+            <label class="form-check-label">2時限-前半</label>
+        </div>
+        <div class="col form-check form-check-inline">
+            <input class="form-check-input" type="checkbox">
+            <label class="form-check-label">2時限-後半</label>
+        </div>
+        <div class="col form-check form-check-inline">
+            <input class="form-check-input" type="checkbox">
+            <label class="form-check-label">3時限-前半</label>
+        </div>
+        <div class="col form-check form-check-inline">
+            <input class="form-check-input" type="checkbox">
+            <label class="form-check-label">3時限-後半</label>
+        </div>
+        <div class="col form-check form-check-inline">
+            <input class="form-check-input" type="checkbox">
+            <label class="form-check-label">4時限-前半</label>
+        </div>
+        <div class="col form-check form-check-inline">
+            <input class="form-check-input" type="checkbox">
+            <label class="form-check-label">4時限-後半</label>
+        </div>
+    </div>
+    <!-- 教科 -->
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">教科</label>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="入力してください" required>
+        </div>
+    </div>
+    <!-- 活動内容 -->
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">活動内容</label>
+        <div class="col">
+            <select class="form-select" required>
+                <option selected disabled value="">選択してください</option>
+                <option>合同説明会</option>
+                <option>説明会</option>
+                <option>試験</option>
+                <option>研修</option>
+                <option>その他</option>
+            </select>
+        </div>
+    </div>
+    <!-- 企業名 -->
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">企業名/主催者</label>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="企業が複数ある場合は、1社ずつ、活動企業数分を提出してください。" required>
+        </div>
+    </div>
+    <!--確認画面遷移ボタン-->
+    <div class="text-center">
+        <button class="btn btn-primary " type="submit" asp-controller="Registration"
+            asp-action="Check">入力内容を確認する</button>
+    </div>
+
+</form>

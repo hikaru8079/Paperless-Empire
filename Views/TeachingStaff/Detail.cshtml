@@ -1,0 +1,94 @@
+@{
+    ViewData["Title"] = "公欠届詳細";
+}
+
+<div class="container">
+    <div class="row">
+        <!--サイドバー-->
+        <partial name="_StaffSideBar" />
+        <!--詳細表示-->
+        <div class="col">
+            <div class="row mb-3">
+                <a onclick="window.history.back(); return false;" class="col-1 text-left bi bi-chevron-left text-body"
+                    style="font-size: 2rem;"></a>
+                <h2 class="col text-center">公欠届詳細</h2>
+            </div>
+            <div class="row justify-content-between">
+                <div class="col-auto">
+                    <p>登録日時</p>
+                    <p>学籍番号</p>
+                    <p>学科</p>
+                    <p>学年</p>
+                    <p>クラス</p>
+                    <p>氏名</p>
+                    <p>公欠日</p>
+                    <p>欠席時限</p>
+                    <p>教科</p>
+                    <p>活動内容</p>
+                    <p>企業名/主催者</p>
+                    <p>承認状況</p>
+                    <p>承認者/確認者</p>
+                    <p>承認/却下日時</p>
+                </div>
+                <div class="col-8">
+                    <!--バックエンド側でDivタグにして動的に値差し込んでね-->
+                    <p>この位置にそれぞれの値が載ります</p>
+                </div>
+            </div>
+            <!--操作ボタン-->
+            <!--承認済みか却下済み/確認前の未確認戻しの場合はエラーが出るかDisabledにしてボタン押せないようにしたい-->
+            <div class="row d-flex justify-content-center mt-3">
+                <div class="col-auto">
+                    <button type="button" class="btn btn-outline-success">
+                        <icon class="bi bi-check-square-fill"></icon> 承認する(学生へ活動報告を促す)
+                    </button>
+                </div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="collapse"
+                        data-bs-target="#collapse2">
+                        <icon class="bi bi-x-square-fill"></icon> 却下する(学生へ再提出を促す)
+                    </button>
+                </div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+                        data-bs-target="#cyuui">
+                        <icon class="bi bi-exclamation-square-fill"></icon> 未確認の状態へ戻す
+                    </button>
+                </div>
+                <!--拒否ボタン押した時の理由入力展開-->
+                <div class="collapse" id="collapse2">
+                    <div class="row mt-3">
+                        <div class="col-auto">
+                            <p>再提出とする理由を入力してください。</p>
+                            <button type="button" class="btn btn-primary">送信する</button>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control mb-2" placeholder="入力してください">
+                            <p>※学生へ理由と共に再提出を促す通知が送信されます</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 未承認に戻す時のモーダル -->
+                <div class="modal fade" id="cyuui" tabindex="-1" aria-labelledby="cyuuiLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="cyuuiLabel">注意</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                未承認の状態へ戻した場合、<mark>改めて承認/却下の操作を行う必要があります。</mark>よろしいですか？
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取りやめる</button>
+                                <!--↓このボタンをトリガーに未確認処理を始めてくれ-->
+                                <button type="button" class="btn btn-primary">未承認の状態へ戻す</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

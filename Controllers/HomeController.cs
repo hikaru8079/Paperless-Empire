@@ -14,6 +14,7 @@ using System.Text.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authentication;
 
 namespace Paperless_Empire.Controllers;
 
@@ -25,7 +26,6 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
-
     public IActionResult Index()
     {
         return View();
