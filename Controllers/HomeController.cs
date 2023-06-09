@@ -29,12 +29,12 @@ public class HomeController : Controller
     public IActionResult Index()
         {
             var user = HttpContext.User;
-            var email = user.FindFirst(ClaimTypes.Email)?.Value;
-            var name = user.FindFirst(ClaimTypes.Name)?.Value;
-            var otherInfo = user.FindFirst("your-claim-type")?.Value;
-            ViewBag.Email = email;
+            var name = user.Identity.Name;
+            var email = user.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value;
+
+            // 名前とメールアドレスをビューに渡す
             ViewBag.Name = name;
-            ViewBag.OtherInfo = otherInfo;
+            ViewBag.Email = email;
 
             // 取得した情報を使用して適切な処理を行う
 
