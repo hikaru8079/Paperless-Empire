@@ -27,9 +27,19 @@ public class HomeController : Controller
         _logger = logger;
     }
     public IActionResult Index()
-    {
-        return View();
-    }
+        {
+            var user = HttpContext.User;
+            var email = user.FindFirst(ClaimTypes.Email)?.Value;
+            var name = user.FindFirst(ClaimTypes.Name)?.Value;
+            var otherInfo = user.FindFirst("your-claim-type")?.Value;
+            ViewBag.Email = email;
+            ViewBag.Name = name;
+            ViewBag.OtherInfo = otherInfo;
+
+            // 取得した情報を使用して適切な処理を行う
+
+            return View();
+        }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
