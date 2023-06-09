@@ -5,7 +5,16 @@ using Paperless_Empire.Models;
 namespace Paperless_Empire.Controllers;
 public class RegistrationController : Controller
 {
-    public IActionResult Index(){
+    public IActionResult Index()
+    {
+        return View();
+    }
+    public IActionResult Check()
+    {
+        return View();
+    }
+        public IActionResult Complete()
+    {
         return View();
     }
 }
