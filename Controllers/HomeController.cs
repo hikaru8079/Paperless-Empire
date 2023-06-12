@@ -28,16 +28,13 @@ public class HomeController : Controller
     }
     public IActionResult Index()
         {
-            var user = HttpContext.User;
-            var name = user.Identity.Name;
-            var email = user.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value;
-
-            // 名前とメールアドレスをビューに渡す
-            ViewBag.Name = name;
+            // ユーザーのメールアドレスを取得
+            var email = User.FindFirstValue("emails");
+            // ユーザーの名前を取得
+            var name = User.FindFirstValue("name");
+            // ビューにデータを渡す
             ViewBag.Email = email;
-
-            // 取得した情報を使用して適切な処理を行う
-
+            ViewBag.Name = name;
             return View();
         }
 
