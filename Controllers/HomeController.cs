@@ -15,6 +15,7 @@ using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Paperless_Empire.Controllers;
 
@@ -27,20 +28,36 @@ public class HomeController : Controller
         _logger = logger;
     }
     public IActionResult Index()
-        {
-            // ユーザーのメールアドレスを取得
-            var email = User.FindFirstValue("emails");
-            // ユーザーの名前を取得
-            var name = User.FindFirstValue("name");
-            // ビューにデータを渡す
-            ViewBag.Email = email;
-            ViewBag.Name = name;
-            return View();
-        }
+    {
+        return View();
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+    [HttpGet]
+    [Authorize]
+    public async Task<IActionResult> GetEmailAddress()
+    {
+        var accessToken = HttpContext.Request.Headers["X-MS-TOKEN-GOOGLE-ACCESS-TOKEN"];
+
+        var httpClient = new HttpClient();
+        var requestUrl = "https://www.googleapis.com/oauth2/v1/userinfo?access_token=" + accessToken;
+
+        var response = await httpClient.GetAsync(requestUrl);
+        if (response.IsSuccessStatusCode)
+        {
+            var responseContent = await response.Content.ReadAsStringAsync();
+            var jsonObject = JObject.Parse(responseContent);
+            var email = jsonObject.Value<string>("email");
+
+            return Ok(email);
+        }
+        else
+        {
+            return BadRequest("Failed to retrieve email address from Google.");
+        }
     }
 }
