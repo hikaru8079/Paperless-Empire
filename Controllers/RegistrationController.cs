@@ -13,7 +13,7 @@ public class RegistrationController : Controller
     {
         return View();
     }
-        public IActionResult Complete()
+    public IActionResult Complete()
     {
         return View();
     }
