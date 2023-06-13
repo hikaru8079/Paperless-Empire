@@ -8,7 +8,8 @@
     <p>日本工学院八王子専門学校 ITカレッジにおける、主に<mark>就職活動</mark>を目的とした公欠の申請用システムです。</p>
     <p>現状ではPCでのアクセスを想定して開発しています。スマートフォンでアクセスした場合、表示が乱れることがありますのでPCでのアクセスをお願いいたします。</p>
     <p>@Model.Name   @Model.Email</p>
-    <pre><code>public ActionResult Index(){
+    <div class="mb-4">
+        <pre><code>public ActionResult Index(){
         // Googleアカウントの情報を取得(下のメソッドを走らせる)
         GoogleUserInfo userInfo = GetGoogleUserInfoFromHeaders(Request).Result;
         // ビューモデルを作成し、Googleアカウントの情報を格納
@@ -37,7 +38,6 @@
         }
     }
 }</code></pre>
-    <div class="mb-4">
         <a class="btn btn-outline-dark" asp-controller="Registration" asp-action="Index">申請はこちら</a>
         <a class="btn btn-outline-dark" asp-controller="Report" asp-action="Index">活動報告はこちら</a>
         <a class="btn btn-outline-dark" asp-controller="TeachingStaff" asp-action="Index">教員・講師の方はこちら</a>
