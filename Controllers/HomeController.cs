@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+﻿/*using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Paperless_Empire.Models;
@@ -19,9 +19,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Newtonsoft.Json;
 
-namespace Paperless_Empire.Controllers;
-
-/*public class HomeController : Controller
+public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
 
@@ -33,29 +31,48 @@ namespace Paperless_Empire.Controllers;
     {
         return View();
     }
-
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }*/
+using System;
+using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Paperless_Empire.Models;
+using System.Diagnostics;
 
+namespace Paperless_Empire.Controllers;
 public class HomeController : Controller
 {
+    private readonly ILogger<HomeController> _logger;
+
+    public HomeController(ILogger<HomeController> logger)
+    {
+        _logger = logger;
+    }
+
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+
     public ActionResult Index()
     {
-        // Googleアカウントの情報を取得
+        // Googleアカウントの情報を取得(下のメソッドを走らせる)
         GoogleUserInfo userInfo = GetGoogleUserInfoFromHeaders(Request).Result;
-
-        // ビューモデルを作成し、Googleアカウントの情報を設定
+        // ビューモデルを作成し、Googleアカウントの情報を格納
         var viewModel = new GoogleAccountViewModel
         {
             Name = userInfo.Name,
             Email = userInfo.Email,
-            // 他のプロパティも必要な場合は設定
         };
-
         return View(viewModel);
     }
 
@@ -83,11 +100,12 @@ public class HomeController : Controller
             }
         }
     }
+
 }
 
 public class GoogleUserInfo
 {
-    public string Name { get; set; }
-    public string Email { get; set; }
+    public string? Name { get; set; }
+    public string? Email { get; set; }
     // 他のプロパティも必要な場合は追加
 }

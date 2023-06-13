@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="ja">
-
+@model GoogleAccountViewModel
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -26,7 +26,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="me-auto"></ul>
                 <ul class="navbar-nav nav nav-pills">
-                    <li class="nav-item"><a class="nav-link text-dark"></a></li>
+                    <li class="nav-item"><a class="nav-link text-dark">@Model.Email</a></li>
                     <li class="nav-item"><a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
                     <li class="nav-item"><a class="nav-link text-dark" href="/.auth/logout">logout</a></li>
