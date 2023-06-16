@@ -7,6 +7,7 @@
     <h2>入力内容確認</h2>
     <p>以下の内容で間違い無ければ、「送信する」ボタンを押してください。</p>
 </div>
+
 <!--プログレスバー-->
 <div class="position-relative my-5 mx-3">
     <div class="progress" style="height: 1px;">
@@ -21,70 +22,37 @@
         class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill"
         style="width: 2rem; height:2rem;">3</button>
 </div>
-<!--学籍番号-->
+
+<!--確認表示-->
 <div class="mb-3 row">
-    <label class="col-sm-2 col-form-label">学籍番号</label>
     <div class="col">
-        <div class="form-control-plaintext" id=""></div>
+        <p class="col-sm-2 col-form-label mb-2">学籍番号</p>
+        <p class="col-sm-2 col-form-label mb-2">学科</p>
+        <p class="col-sm-2 col-form-label mb-2">学年</p>
+        <p class="col-sm-2 col-form-label mb-2">クラス</p>
+        <p class="col-sm-2 col-form-label mb-2">氏名</p>
+        <p class="col-sm-2 col-form-label mb-2">公欠日</p>
+        <p class="col-sm-2 col-form-label mb-2">欠席時限</p>
+        <p class="col-sm-2 col-form-label mb-2">教科</p>
+        <p class="col-sm-2 col-form-label mb-2">活動内容</p>
+        <p class="col-sm-2 col-form-label mb-2">企業名/主催者</p>
+    </div>
+    <div class="col">
+        <p class="form-control-plaintext mb-2">@ViewData["Number"]</p>
+        <p class="form-control-plaintext mb-2">@ViewData["Department"]</p>
+        <p class="form-control-plaintext mb-2">@ViewData["Grade"]</p>
+        <p class="form-control-plaintext mb-2">@ViewData["Class"]</p>
+        <p class="form-control-plaintext mb-2">@ViewData["Name"]</p>
+        <p class="form-control-plaintext mb-2">@ViewData["Date"]</p>
+        <p class="form-control-plaintext mb-2">@ViewData["Period"]</p>
+        <p class="form-control-plaintext mb-2">@ViewData["Subject"]</p>
+        <p class="form-control-plaintext mb-2">@ViewData["Activity"]</p>
+        <p class="form-control-plaintext mb-2">@ViewData["Company"]</p>
     </div>
 </div>
-<!--学科-->
-<div class="mb-3 row">
-    <label class="col-sm-2 col-form-label">学科</label>
-    <div class="col">
-        <div class="form-control-plaintext" id=""></div>
-    </div>
-</div>
-<!--学年-->
-<div class="mb-3 row">
-    <label class="col-sm-2 col-form-label">学年</label>
-    <div class="col">
-        <div class="form-control-plaintext" id=""></div>
-    </div>
-</div>
-<!--クラス-->
-<div class="mb-3 row">
-    <label class="col-sm-2 col-form-label">クラス</label>
-    <div class="col">
-        <div class="form-control-plaintext" id=""></div>
-    </div>
-</div>
-<!--氏名-->
-<div class="mb-3 row">
-    <label class="col-sm-2 col-form-label">氏名</label>
-    <div class="col">
-        <div class="form-control-plaintext" id=""></div>
-    </div>
-</div>
-<!--公欠日-->
-<div class="mb-3 row">
-    <label class="col-sm-2 col-form-label">公欠日</label>
-    <div class="col">
-        <div class="form-control-plaintext" id=""></div>
-    </div>
-</div>
-<!--欠席時限-->
-<div class="mb-3 row">
-    <label class="col-sm-2 col-form-label">欠席時限</label>
-    <div class="col">
-        <div class="form-control-plaintext" id=""></div>
-    </div>
-</div>
-<!--活動内容-->
-<div class="mb-3 row">
-    <label class="col-sm-2 col-form-label">活動内容</label>
-    <div class="col">
-        <div class="form-control-plaintext" id=""></div>
-    </div>
-</div>
-<!--企業名/主催者-->
-<div class="mb-3 row">
-    <label class="col-sm-2 col-form-label">企業名/主催者</label>
-    <div class="col">
-        <div class="form-control-plaintext" id=""></div>
-    </div>
-</div>
-<!--送信ボタン-->
+
+<!--送信/修正ボタン-->
 <div class="text-center">
-    <a class="btn btn-primary mb-3" asp-controller="Registration" asp-action="Complete">送信する</a>
+    <a class="btn btn-warning mb-3" onclick="window.history.back(); return false;">修正する</a>
+    <a class="btn btn-primary mb-3" asp-controller="Registration" asp-action="Send">送信する</a>
 </div>

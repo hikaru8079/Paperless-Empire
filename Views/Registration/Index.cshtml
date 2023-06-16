@@ -1,6 +1,7 @@
 @{
     ViewData["Title"] = "公欠情報登録";
 }
+
 <!--説明文-->
 <div class="text-center mb-3">
     <h2>公欠届提出</h2>
@@ -8,6 +9,7 @@
     <p><strong>申請は<mark>1日毎</mark>となります。</strong></p>
     <p>事前に公欠日が分かっている場合、<mark><strong>1週間前</strong></mark>までに申請してください。</p>
 </div>
+
 <!--プログレスバー-->
 <div class="position-relative my-5 mx-3">
     <div class="progress" style="height: 1px;">
@@ -24,19 +26,22 @@
         style="width: 2rem; height:2rem;">3</button>
 </div>
 
-<form>
+<!--入力フォーム-->
+<form method="post" asp-controller="Registration" asp-action="ToCheck">
+
     <!-- 学籍番号 -->
     <div class="my-3 row">
         <label class="col-sm-2 col-form-label">学籍番号</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" placeholder="入力してください" required>
+            <input type="text" class="form-control" name="Number" placeholder="入力してください" required>
         </div>
     </div>
+
     <!-- 学科 -->
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">学科</label>
         <div class="col">
-            <select class="form-select" required>
+            <select class="form-select" required name="Department">
                 <option selected disabled value="">選択してください</option>
                 <option>ITスペシャリスト科</option>
                 <option>情報処理科</option>
@@ -46,11 +51,12 @@
             </select>
         </div>
     </div>
+
     <!-- 学年 -->
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">学年</label>
         <div class="col">
-            <select class="form-select" required>
+            <select class="form-select" required name="Grade">
                 <option selected disabled value="">選択してください</option>
                 <option>1年</option>
                 <option>2年</option>
@@ -59,11 +65,12 @@
             </select>
         </div>
     </div>
+
     <!-- クラス -->
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">クラス</label>
         <div class="col">
-            <select class="form-select" required>
+            <select class="form-select" required name="Class">
                 <option selected disabled value="">選択してください</option>
                 <option>1組</option>
                 <option>2組</option>
@@ -74,26 +81,23 @@
             </select>
         </div>
     </div>
+
     <!-- 氏名 -->
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">氏名</label>
         <div class="col">
-            <input type="text" class="form-control" placeholder="入力してください" required>
+            <input type="text" class="form-control" placeholder="入力してください" name="Name" required>
         </div>
     </div>
+
     <!-- 公欠日 -->
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">公欠日</label>
         <div class="col">
-            <input type="text" class="form-control" placeholder="年" required>
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="月" required>
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="日" required>
+            <input type="date" class="form-control" name="Date" required>
         </div>
     </div>
+
     <!-- 欠席時限 -->
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">欠席時限</label>
@@ -130,18 +134,20 @@
             <label class="form-check-label">4時限-後半</label>
         </div>
     </div>
+
     <!-- 教科 -->
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">教科</label>
         <div class="col">
-            <input type="text" class="form-control" placeholder="入力してください" required>
+            <input type="text" class="form-control" placeholder="入力してください" name="Subject" required>
         </div>
     </div>
+
     <!-- 活動内容 -->
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">活動内容</label>
         <div class="col">
-            <select class="form-select" required>
+            <select class="form-select" name="Activity" required>
                 <option selected disabled value="">選択してください</option>
                 <option>合同説明会</option>
                 <option>説明会</option>
@@ -151,17 +157,19 @@
             </select>
         </div>
     </div>
+
     <!-- 企業名 -->
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">企業名/主催者</label>
         <div class="col">
-            <input type="text" class="form-control" placeholder="企業が複数ある場合は、1社ずつ、活動企業数分を提出してください。" required>
+            <input type="text" class="form-control" placeholder="企業が複数ある場合は、1社ずつ、活動企業数分を提出してください。" name="Company" required>
         </div>
     </div>
+
     <!--確認画面遷移ボタン-->
     <div class="text-center">
-        <button class="btn btn-primary " type="submit" asp-controller="Registration"
-            asp-action="Check">入力内容を確認する</button>
+        <button class="btn btn-primary" type="submit" asp-controller="Registration"
+            asp-action="ToCheck">入力内容を確認する</button>
     </div>
 
 </form>
