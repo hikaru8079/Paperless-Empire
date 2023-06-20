@@ -1,6 +1,44 @@
 @{
     ViewData["Title"] = "入力内容確認";
 }
+@model RegistrationViewModel
+@functions{
+    public string Period(){
+        var p11 = "";
+        var p12 = "";
+        var p21 = "";
+        var p22 = "";
+        var p31 = "";
+        var p32 = "";
+        var p41 = "";
+        var p42 = "";
+        if(Model.Period11.Equals(true)){
+            p11 = "1時限目-前半";
+        }
+        if(Model.Period12!.Equals(true)){
+            p12="1時限目-後半";
+        }
+        if(Model.Period21!.Equals(true)){
+            p21="2時限目-前半";
+        }
+        if(Model.Period22!.Equals(true)){
+            p22="2時限目-後半";
+        }
+        if(Model.Period31!.Equals(true)){
+            p31="3時限目-前半";
+        }
+        if(Model.Period32!.Equals(true)){
+            p32="3時限目-後半";
+        }
+        if(Model.Period41!.Equals(true)){
+            p41="4時限目-前半";
+        }
+        if(Model.Period42!.Equals(true)){
+            p42="4時限目-後半";
+        }
+        return p11 + "," + p12 + "," + p21 + "," + p22 + "," + p31 + "," + p32 + "," + p41 + "," + p42 + ",";
+    }
+}
 
 <!--説明文-->
 <div class="text-center">
@@ -33,26 +71,33 @@
         <p class="col-sm-2 col-form-label mb-2">氏名</p>
         <p class="col-sm-2 col-form-label mb-2">公欠日</p>
         <p class="col-sm-2 col-form-label mb-2">欠席時限</p>
-        <p class="col-sm-2 col-form-label mb-2">教科</p>
+        <p class="col-sm-2 col-form-label mb-2">教科(1時限)</p>
+        <p class="col-sm-2 col-form-label mb-2">教科(2時限)</p>
+        <p class="col-sm-2 col-form-label mb-2">教科(3時限)</p>
+        <p class="col-sm-2 col-form-label mb-2">教科(4時限)</p>
         <p class="col-sm-2 col-form-label mb-2">活動内容</p>
         <p class="col-sm-2 col-form-label mb-2">企業名/主催者</p>
     </div>
+
     <div class="col">
-        <p class="form-control-plaintext mb-2">@ViewData["Number"]</p>
-        <p class="form-control-plaintext mb-2">@ViewData["Department"]</p>
-        <p class="form-control-plaintext mb-2">@ViewData["Grade"]</p>
-        <p class="form-control-plaintext mb-2">@ViewData["Class"]</p>
-        <p class="form-control-plaintext mb-2">@ViewData["Name"]</p>
-        <p class="form-control-plaintext mb-2">@ViewData["Date"]</p>
-        <p class="form-control-plaintext mb-2">@ViewData["Period"]</p>
-        <p class="form-control-plaintext mb-2">@ViewData["Subject"]</p>
-        <p class="form-control-plaintext mb-2">@ViewData["Activity"]</p>
-        <p class="form-control-plaintext mb-2">@ViewData["Company"]</p>
+        <p class="form-control-plaintext mb-2">@ViewData["Number"]  </p>
+        <p class="form-control-plaintext mb-2">@ViewData["Department"]  </p>
+        <p class="form-control-plaintext mb-2">@ViewData["Grade"]  </p>
+        <p class="form-control-plaintext mb-2">@ViewData["Class"]  </p>
+        <p class="form-control-plaintext mb-2">@ViewData["Name"]  </p>
+        <p class="form-control-plaintext mb-2">@ViewData["Date"]  </p>
+        <p class="form-control-plaintext mb-2">@Period()</p>
+        <p class="form-control-plaintext mb-2">@ViewData["Subject1"]  </p>
+        <p class="form-control-plaintext mb-2">@ViewData["Subject2"]  </p>
+        <p class="form-control-plaintext mb-2">@ViewData["Subject3"]  </p>
+        <p class="form-control-plaintext mb-2">@ViewData["Subject4"]  </p>
+        <p class="form-control-plaintext mb-2">@ViewData["Activity"]  </p>
+        <p class="form-control-plaintext mb-2">@ViewData["Company"]  </p>
     </div>
 </div>
 
 <!--送信/修正ボタン-->
 <div class="text-center">
     <a class="btn btn-warning mb-3" onclick="window.history.back(); return false;">修正する</a>
-    <a class="btn btn-primary mb-3" asp-controller="Registration" asp-action="Send">送信する</a>
+    <a class="btn btn-primary mb-3" asp-controller="Registration" asp-action="Complete">送信する</a>
 </div>

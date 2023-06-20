@@ -1,6 +1,8 @@
 @{
     ViewData["Title"] = "公欠情報登録";
+    DateTime Today = DateTime.Today;
 }
+@model RegistrationViewModel
 
 <!--説明文-->
 <div class="text-center mb-3">
@@ -27,7 +29,7 @@
 </div>
 
 <!--入力フォーム-->
-<form method="post" asp-controller="Registration" asp-action="ToCheck">
+<form method="post" asp-controller="Registration" asp-action="Check">
 
     <!-- 学籍番号 -->
     <div class="my-3 row">
@@ -101,45 +103,64 @@
     <!-- 欠席時限 -->
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">欠席時限</label>
+
         <div class="col form-check form-check-inline">
-            <input class="form-check-input" type="checkbox">
-            <label class="form-check-label">1時限-前半</label>
+            <input class="form-check-input" type="checkbox" asp-for="Period11" name="Period11">
+            <label class="form-check-label" asp-for="Period11">1時限目-前半</label>
         </div>
         <div class="col form-check form-check-inline">
-            <input class="form-check-input" type="checkbox">
-            <label class="form-check-label">1時限-後半</label>
+            <input class="form-check-input" type="checkbox" asp-for="Period12" name="Period12">
+            <label class="form-check-label" asp-for="Period12">1時限目-後半</label>
         </div>
         <div class="col form-check form-check-inline">
-            <input class="form-check-input" type="checkbox">
-            <label class="form-check-label">2時限-前半</label>
+            <input class="form-check-input" type="checkbox" asp-for="Period21" name="Period21">
+            <label class="form-check-label" asp-for="Period21">2時限目-前半</label>
         </div>
         <div class="col form-check form-check-inline">
-            <input class="form-check-input" type="checkbox">
-            <label class="form-check-label">2時限-後半</label>
+            <input class="form-check-input" type="checkbox" asp-for="Period22" name="Period22">
+            <label class="form-check-label" asp-for="Period22">2時限目-後半</label>
         </div>
         <div class="col form-check form-check-inline">
-            <input class="form-check-input" type="checkbox">
-            <label class="form-check-label">3時限-前半</label>
+            <input class="form-check-input" type="checkbox" asp-for="Period31" name="Period31">
+            <label class="form-check-label" asp-for="Period31">3時限目-前半</label>
         </div>
         <div class="col form-check form-check-inline">
-            <input class="form-check-input" type="checkbox">
-            <label class="form-check-label">3時限-後半</label>
+            <input class="form-check-input" type="checkbox" asp-for="Period32" name="Period32">
+            <label class="form-check-label" asp-for="Period32">3時限目-後半</label>
         </div>
         <div class="col form-check form-check-inline">
-            <input class="form-check-input" type="checkbox">
-            <label class="form-check-label">4時限-前半</label>
+            <input class="form-check-input" type="checkbox" asp-for="Period41" name="Period41">
+            <label class="form-check-label" asp-for="Period41">4時限目-前半</label>
         </div>
         <div class="col form-check form-check-inline">
-            <input class="form-check-input" type="checkbox">
-            <label class="form-check-label">4時限-後半</label>
+            <input class="form-check-input" type="checkbox" asp-for="Period42" name="Period42">
+            <label class="form-check-label" asp-for="Period42">4時限目-後半</label>
         </div>
     </div>
 
     <!-- 教科 -->
     <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">教科</label>
+        <label class="col-sm-2 col-form-label">教科(1時限)</label>
         <div class="col">
-            <input type="text" class="form-control" placeholder="入力してください" name="Subject" required>
+            <input type="text" class="form-control" placeholder="入力してください" name="Subject1">
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">教科(2時限)</label>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="入力してください" name="Subject2">
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">教科(3時限)</label>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="入力してください" name="Subject3">
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">教科(4時限)</label>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="入力してください" name="Subject4">
         </div>
     </div>
 
@@ -162,14 +183,15 @@
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">企業名/主催者</label>
         <div class="col">
-            <input type="text" class="form-control" placeholder="企業が複数ある場合は、1社ずつ、活動企業数分を提出してください。" name="Company" required>
+            <input type="text" class="form-control" placeholder="企業が複数ある場合は、1社ずつ、活動企業数分を提出してください。" name="Company"
+                required>
         </div>
     </div>
 
     <!--確認画面遷移ボタン-->
     <div class="text-center">
         <button class="btn btn-primary" type="submit" asp-controller="Registration"
-            asp-action="ToCheck">入力内容を確認する</button>
+            asp-action="Check">入力内容を確認する</button>
     </div>
 
 </form>
