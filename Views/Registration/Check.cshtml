@@ -15,25 +15,25 @@
         if(Model.Period11.Equals(true)){
             p11 = "1時限目-前半";
         }
-        if(Model.Period12!.Equals(true)){
+        if(Model.Period12.Equals(true)){
             p12="1時限目-後半";
         }
-        if(Model.Period21!.Equals(true)){
+        if(Model.Period21.Equals(true)){
             p21="2時限目-前半";
         }
-        if(Model.Period22!.Equals(true)){
+        if(Model.Period22.Equals(true)){
             p22="2時限目-後半";
         }
-        if(Model.Period31!.Equals(true)){
+        if(Model.Period31.Equals(true)){
             p31="3時限目-前半";
         }
-        if(Model.Period32!.Equals(true)){
+        if(Model.Period32.Equals(true)){
             p32="3時限目-後半";
         }
-        if(Model.Period41!.Equals(true)){
+        if(Model.Period41.Equals(true)){
             p41="4時限目-前半";
         }
-        if(Model.Period42!.Equals(true)){
+        if(Model.Period42.Equals(true)){
             p42="4時限目-後半";
         }
         return p11 + "," + p12 + "," + p21 + "," + p22 + "," + p31 + "," + p32 + "," + p41 + "," + p42 + ",";
@@ -80,19 +80,19 @@
     </div>
 
     <div class="col">
-        <p class="form-control-plaintext mb-2">@ViewData["Number"]  </p>
-        <p class="form-control-plaintext mb-2">@ViewData["Department"]  </p>
-        <p class="form-control-plaintext mb-2">@ViewData["Grade"]  </p>
-        <p class="form-control-plaintext mb-2">@ViewData["Class"]  </p>
-        <p class="form-control-plaintext mb-2">@ViewData["Name"]  </p>
-        <p class="form-control-plaintext mb-2">@ViewData["Date"]  </p>
+        <p class="form-control-plaintext mb-2">@ViewData["Number"]</p>
+        <p class="form-control-plaintext mb-2">@ViewData["Department"]</p>
+        <p class="form-control-plaintext mb-2">@ViewData["Grade"]</p>
+        <p class="form-control-plaintext mb-2">@ViewData["Class"]</p>
+        <p class="form-control-plaintext mb-2">@ViewData["Name"]</p>
+        <p class="form-control-plaintext mb-2">@ViewData["Date"]</p>
         <p class="form-control-plaintext mb-2">@Period()</p>
-        <p class="form-control-plaintext mb-2">@ViewData["Subject1"]  </p>
-        <p class="form-control-plaintext mb-2">@ViewData["Subject2"]  </p>
-        <p class="form-control-plaintext mb-2">@ViewData["Subject3"]  </p>
-        <p class="form-control-plaintext mb-2">@ViewData["Subject4"]  </p>
-        <p class="form-control-plaintext mb-2">@ViewData["Activity"]  </p>
-        <p class="form-control-plaintext mb-2">@ViewData["Company"]  </p>
+        <p class="form-control-plaintext mb-2">@ViewData["Subject1"]</p>
+        <p class="form-control-plaintext mb-2">@ViewData["Subject2"]</p>
+        <p class="form-control-plaintext mb-2">@ViewData["Subject3"]</p>
+        <p class="form-control-plaintext mb-2">@ViewData["Subject4"]</p>
+        <p class="form-control-plaintext mb-2">@ViewData["Activity"]</p>
+        <p class="form-control-plaintext mb-2">@ViewData["Company"]</p>
     </div>
 </div>
 

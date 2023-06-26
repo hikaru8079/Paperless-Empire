@@ -33,7 +33,7 @@ public class HomeController : Controller{
     //App Serviceでの認証セッションからGoogleアカウント情報を取得、利用するメソッド
     public async Task<GoogleUserInfo> GetGoogleUserInfoFromHeaders(HttpRequest request){
         //使わないけどIDトークン
-        var idToken = request.Headers["X-MS-TOKEN-GOOGLE-ID-TOKEN"].FirstOrDefault();
+        //var idToken = request.Headers["X-MS-TOKEN-GOOGLE-ID-TOKEN"].FirstOrDefault();
         //EasyAuthのセッションのアクセストークンを取得するための固有リクエストヘッダを差し込んで、変数に代入
         var accessToken = request.Headers["X-MS-TOKEN-GOOGLE-ACCESS-TOKEN"].FirstOrDefault();
         //OAuth APIでアカウント情報をHTTP通信にて取得
