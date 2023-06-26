@@ -39,7 +39,7 @@ public class RegistrationController : Controller{
     public static WebClient s_webClient = new WebClient();
     public static Rootobject SendMessageToSlack(string? text){
         var data = new NameValueCollection();
-            data["token"] = "xoxb-5471836121122-5504690798032-F18Lkywn3kMEXqLlSG5rlNra";
+            data["token"] = "xoxb-5471836121122-5504690798032-jrIU790w0mBoib6VBPJx5s8d";
             data["channel"] = "#slackapi-test";
             data["text"] = text;
             var response = s_webClient.UploadValues("https://slack.com/api/chat.postMessage", "POST", data);
