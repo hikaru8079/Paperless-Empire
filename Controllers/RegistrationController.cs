@@ -9,18 +9,6 @@ public class RegistrationController : Controller{
 
     [HttpPost]
     public IActionResult Check(RegistrationModel Model){
-        //Model.Number = Request.Form["Number"];
-        //Model.Department = Request.Form["Department"];
-        //Model.Grade = Request.Form["Grade"];
-        //Model.Class = Request.Form["Class"];
-        //Model.Name = Request.Form["Name"];
-        //Model.Date = Request.Form["Date"];
-        //Model.Subject1 = Request.Form["Subject1"];
-        //Model.Subject2 = Request.Form["Subject2"];
-        //Model.Subject3 = Request.Form["Subject3"];
-        //Model.Subject4 = Request.Form["Subject4"];
-        //Model.Activity = Request.Form["Activity"];
-        //Model.Company = Request.Form["Company"];
         return View(Model);
     }
     public async Task<IActionResult> Complete(RegistrationModel Model){
