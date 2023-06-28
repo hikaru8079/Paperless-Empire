@@ -3,7 +3,7 @@ using System.Text;
 using Paperless_Empire.Models;
 namespace Paperless_Empire.Controllers;
 public class RegistrationController : Controller{
-    public IActionResult Index(RegistrationModel Model){
+    public IActionResult Index(){
         return View();
     }
 
