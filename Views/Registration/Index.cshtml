@@ -2,7 +2,7 @@
     ViewData["Title"] = "公欠情報登録";
     DateTime Today = DateTime.Today;
 }
-@model RegistrationViewModel
+@model RegistrationModel
 
 <!--説明文-->
 <div class="text-center mb-3">
@@ -35,7 +35,7 @@
     <div class="my-3 row">
         <label class="col-sm-2 col-form-label">学籍番号</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" name="Number" placeholder="入力してください" required>
+            <input type="text" class="form-control" name="Number" placeholder="入力してください" asp-for="Number" required>
         </div>
     </div>
 
@@ -43,7 +43,7 @@
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">学科</label>
         <div class="col">
-            <select class="form-select" required name="Department">
+            <select class="form-select" required name="Department" asp-for="Department">
                 <option selected disabled value="">選択してください</option>
                 <option>ITスペシャリスト科</option>
                 <option>情報処理科</option>
@@ -58,7 +58,7 @@
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">学年</label>
         <div class="col">
-            <select class="form-select" required name="Grade">
+            <select class="form-select" required name="Grade" asp-for="Grade">
                 <option selected disabled value="">選択してください</option>
                 <option>1年</option>
                 <option>2年</option>
@@ -72,7 +72,7 @@
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">クラス</label>
         <div class="col">
-            <select class="form-select" required name="Class">
+            <select class="form-select" required name="Class" asp-for="Class">
                 <option selected disabled value="">選択してください</option>
                 <option>1組</option>
                 <option>2組</option>
@@ -88,7 +88,7 @@
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">氏名</label>
         <div class="col">
-            <input type="text" class="form-control" placeholder="入力してください" name="Name" required>
+            <input type="text" class="form-control" placeholder="入力してください" name="Name" asp-for="Name" required>
         </div>
     </div>
 
@@ -96,7 +96,7 @@
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">公欠日</label>
         <div class="col">
-            <input type="date" class="form-control" name="Date" required>
+            <input type="date" class="form-control" name="Date" asp-for="Date" required>
         </div>
     </div>
 
@@ -142,25 +142,25 @@
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">教科(1時限)</label>
         <div class="col">
-            <input type="text" class="form-control" placeholder="入力してください" name="Subject1">
+            <input type="text" class="form-control" placeholder="入力してください" name="Subject1" asp-for="Subject1">
         </div>
     </div>
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">教科(2時限)</label>
         <div class="col">
-            <input type="text" class="form-control" placeholder="入力してください" name="Subject2">
+            <input type="text" class="form-control" placeholder="入力してください" name="Subject2" asp-for="Subject2">
         </div>
     </div>
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">教科(3時限)</label>
         <div class="col">
-            <input type="text" class="form-control" placeholder="入力してください" name="Subject3">
+            <input type="text" class="form-control" placeholder="入力してください" name="Subject3" asp-for="Subject3">
         </div>
     </div>
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">教科(4時限)</label>
         <div class="col">
-            <input type="text" class="form-control" placeholder="入力してください" name="Subject4">
+            <input type="text" class="form-control" placeholder="入力してください" name="Subject4" asp-for="Subject4">
         </div>
     </div>
 
@@ -168,7 +168,7 @@
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">活動内容</label>
         <div class="col">
-            <select class="form-select" name="Activity" required>
+            <select class="form-select" name="Activity" asp-for="Activity" required>
                 <option selected disabled value="">選択してください</option>
                 <option>合同説明会</option>
                 <option>説明会</option>
@@ -184,7 +184,7 @@
         <label class="col-sm-2 col-form-label">企業名/主催者</label>
         <div class="col">
             <input type="text" class="form-control" placeholder="企業が複数ある場合は、1社ずつ、活動企業数分を提出してください。" name="Company"
-                required>
+                asp-for="Company" required>
         </div>
     </div>
 

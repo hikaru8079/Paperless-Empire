@@ -6,7 +6,7 @@ namespace Paperless_Empire.Controllers;
 
 public class HomeController : Controller{
 
-    //ここからプログラム上意味を持たない定型文
+    //ここからロギングとエラー用Exception表示用構文
     private readonly ILogger<HomeController> _logger;
     public HomeController(ILogger<HomeController> logger){
         _logger = logger;
@@ -19,17 +19,16 @@ public class HomeController : Controller{
 
     //最初のホームページにアクセスした時に走るメソッド
     public IActionResult Index(){
-        // Googleアカウントの情報を取得(下のメソッドを走らせる)
+        //Googleアカウントの情報を取得(下のメソッドを走らせる)
         GoogleUserInfo userInfo = GetGoogleUserInfoFromHeaders(Request).Result;
-        // ビューモデルを作成し、取得したGoogleアカウントの情報を格納
+        //ビューモデルを作成し、取得したGoogleアカウントの情報を格納
         var viewModel = new GoogleAccountViewModel{
             Name = userInfo.Name,
             Email = userInfo.Email,
         };
         //格納した情報を渡した上でホームページ(Index.cshtml)を表示
-        return View(viewModel);
+        return View();
     }
-
     //App Serviceでの認証セッションからGoogleアカウント情報を取得、利用するメソッド
     public async Task<GoogleUserInfo> GetGoogleUserInfoFromHeaders(HttpRequest request){
         //使わないけどIDトークン

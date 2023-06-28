@@ -1,7 +1,7 @@
 @{
     ViewData["Title"] = "入力内容確認";
 }
-@model RegistrationViewModel
+@model RegistrationModel
 @functions{
     public string Period(){
         var p11 = "";
@@ -80,22 +80,22 @@
     </div>
 
     <div class="col">
-        <p class="form-control-plaintext mb-2">@ViewData["Number"]</p>
-        <p class="form-control-plaintext mb-2">@ViewData["Department"]</p>
-        <p class="form-control-plaintext mb-2">@ViewData["Grade"]</p>
-        <p class="form-control-plaintext mb-2">@ViewData["Class"]</p>
-        <p class="form-control-plaintext mb-2">@ViewData["Name"]</p>
-        <p class="form-control-plaintext mb-2">@ViewData["Date"]</p>
+        <p class="form-control-plaintext mb-2">@Model.Number</p>
+        <p class="form-control-plaintext mb-2">@Model.Department</p>
+        <p class="form-control-plaintext mb-2">@Model.Grade</p>
+        <p class="form-control-plaintext mb-2">@Model.Class</p>
+        <p class="form-control-plaintext mb-2">@Model.Name</p>
+        <p class="form-control-plaintext mb-2">@Model.Date</p>
         <p class="form-control-plaintext mb-2">@Period()</p>
-        <p class="form-control-plaintext mb-2">@ViewData["Subject1"]</p>
-        <p class="form-control-plaintext mb-2">@ViewData["Subject2"]</p>
-        <p class="form-control-plaintext mb-2">@ViewData["Subject3"]</p>
-        <p class="form-control-plaintext mb-2">@ViewData["Subject4"]</p>
-        <p class="form-control-plaintext mb-2">@ViewData["Activity"]</p>
-        <p class="form-control-plaintext mb-2">@ViewData["Company"]</p>
+        <p class="form-control-plaintext mb-2">@Model.Subject1</p>
+        <p class="form-control-plaintext mb-2">@Model.Subject2</p>
+        <p class="form-control-plaintext mb-2">@Model.Subject3</p>
+        <p class="form-control-plaintext mb-2">@Model.Subject4</p>
+        <p class="form-control-plaintext mb-2">@Model.Activity</p>
+        <p class="form-control-plaintext mb-2">@Model.Company</p>
     </div>
 </div>
-
+@Model.Name
 <!--送信/修正ボタン-->
 <div class="text-center">
     <a class="btn btn-warning mb-3" onclick="window.history.back(); return false;">修正する</a>

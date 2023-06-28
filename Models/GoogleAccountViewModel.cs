@@ -1,4 +1,4 @@
-namespace Paperless_Empire;
+namespace Paperless_Empire.Models;
 public class GoogleAccountViewModel
 {
     public string? Name { get; set; }
