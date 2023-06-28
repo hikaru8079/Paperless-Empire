@@ -27,7 +27,7 @@ public class HomeController : Controller{
             Email = userInfo.Email,
         };
         //格納した情報を渡した上でホームページ(Index.cshtml)を表示
-        return View();
+        return View(viewModel);
     }
     //App Serviceでの認証セッションからGoogleアカウント情報を取得、利用するメソッド
     public async Task<GoogleUserInfo> GetGoogleUserInfoFromHeaders(HttpRequest request){
