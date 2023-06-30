@@ -2,9 +2,7 @@ using Paperless_Empire.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Text;
 using Newtonsoft.Json;
-using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
-using System.Configuration;
 
 namespace Paperless_Empire.Controllers;
 public class RegistrationController : Controller{
