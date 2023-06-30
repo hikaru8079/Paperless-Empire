@@ -2,3 +2,4 @@ bin/
 obj/
 Paperless-Empire.sln
 Dockerfile
+.vscode/
