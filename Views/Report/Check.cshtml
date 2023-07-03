@@ -1,79 +1,154 @@
 @{
     ViewData["Title"] = "入力内容確認";
 }
+@model ReportViewModel
+
+@functions{
+    public string Documents(){
+        var documents = new List<string>();
+
+        if (Model.Resume.Equals(true)){
+            documents.Add("履歴書");
+        }
+        if (Model.Score!.Equals(true)){
+            documents.Add("成績証明書");
+        }
+        if (Model.Graduation!.Equals(true)){
+            documents.Add("卒業見込証明書");
+        }
+        if (Model.Health!.Equals(true)){
+            documents.Add("健康診断書");
+        }
+        if (Model.Entry!.Equals(true)){
+            documents.Add("エントリーシート");
+        }
+        if (Model.Recommend!.Equals(true)){
+            documents.Add("推薦書");
+        }
+        if (Model.Introduce!.Equals(true)){
+            documents.Add("紹介状");
+        }
+        if (Model.DocOthers!.Equals(true)){
+            documents.Add("その他");
+        }
+
+        return string.Join(", ", documents);
+    }
+}
+
+@functions{
+    public string Test(){
+        var tests = new List<string>();
+
+        if (Model.AptitudeTest.Equals(true)){
+            tests.Add("適性検査");
+        }
+        if (Model.CommonSense!.Equals(true)){
+            tests.Add("一般常識");
+        }
+        if (Model.Speciality!.Equals(true)){
+            tests.Add("専門科目");
+        }
+        if (Model.Essay!.Equals(true)){
+            tests.Add("作文・小論文");
+        }
+        if (Model.TestOthers!.Equals(true)){
+            tests.Add("その他");
+        }
+
+        return string.Join(", ", tests);
+    }
+}
+
+@functions{
+    public string Interview(){
+        var interviews = new List<string>();
+
+        if (Model.Personal.Equals(true)){
+            interviews.Add("個人面接(面接官 1人)");
+        }
+        if (Model.Group!.Equals(true)){
+            interviews.Add("集団面接(面接官 1人・1グループ n人)");
+        }
+
+        return string.Join(", ", interviews);
+    }
+}
+
+
 
 <div class="text-center mb-3">
     <h2>入力内容確認</h2>
     <p>以下の内容で間違い無ければ、「送信する」ボタンを押してください。</p>
 </div>
-<!--学籍番号-->
+<!--提出書類-->
 <div class="mb-3 row">
     <label class="col-sm-2 col-form-label">提出書類</label>
     <div class="col">
-        <div class="form-control-plaintext" id=""></div>
+        <p class="form-control-plaintext">@Documents()</p>
     </div>
 </div>
-<!--学科-->
+<!--訪問企業住所-->
 <div class="mb-3 row">
     <label class="col-sm-2 col-form-label">訪問企業住所</label>
     <div class="col">
-        <div class="form-control-plaintext" id=""></div>
+        <p class="form-control-plaintext">@ViewData["Address"]</p>
     </div>
 </div>
-<!--学年-->
+<!--筆記試験-->
 <div class="mb-3 row">
     <label class="col-sm-2 col-form-label">筆記試験</label>
     <div class="col">
-        <div class="form-control-plaintext" id=""></div>
+        <div class="form-control-plaintext">@Test()</div>
     </div>
 </div>
-<!--クラス-->
+<!--適性テスト-->
 <div class="mb-3 row">
     <label class="col-sm-2 col-form-label">適性テスト(種類・内容)</label>
     <div class="col">
-        <div class="form-control-plaintext" id=""></div>
+        <div class="form-control-plaintext">@ViewData["AptitudeTestContent"]</div>
     </div>
 </div>
-<!--氏名-->
+<!--一般常識-->
 <div class="mb-3 row">
     <label class="col-sm-2 col-form-label">一般常識(内容)</label>
     <div class="col">
-        <div class="form-control-plaintext" id=""></div>
+        <div class="form-control-plaintext">@ViewData["CommonSenseContent"]</div>
     </div>
 </div>
-<!--公欠日-->
+<!--専門家科目-->
 <div class="mb-3 row">
     <label class="col-sm-2 col-form-label">専門科目(内容)</label>
     <div class="col">
-        <div class="form-control-plaintext" id=""></div>
+        <div class="form-control-plaintext">@ViewData["SpecialityContent"]</div>
     </div>
 </div>
-<!--欠席時限-->
+<!--作文・小論文-->
 <div class="mb-3 row">
     <label class="col-sm-2 col-form-label">作文・小論文(課題名)</label>
     <div class="col">
-        <div class="form-control-plaintext" id=""></div>
+        <div class="form-control-plaintext">@ViewData["EssayContent"]</div>
     </div>
 </div>
-<!--活動内容-->
+<!--面接試験-->
 <div class="mb-3 row">
     <label class="col-sm-2 col-form-label">面接試験</label>
     <div class="col">
-        <div class="form-control-plaintext" id=""></div>
+        <div class="form-control-plaintext">@Interview()</div>
     </div>
 </div>
-<!--企業名/主催者-->
+<!--質問事項-->
 <div class="mb-3 row">
     <label class="col-sm-2 col-form-label">面接試験(質問事項)</label>
     <div class="col">
-        <div class="form-control-plaintext" id=""></div>
+        <div class="form-control-plaintext">@ViewData["InterviewContent"]</div>
     </div>
 </div>
-<!---->
+<!--受験の感想(アドバイス等)-->
 <div class="mb-3 row">
     <label class="col-sm-2 col-form-label">受験の感想(アドバイス等)</label>
     <div class="col">
-        <div class="form-control-plaintext" id=""></div>
+        <div class="form-control-plaintext">@ViewData["Advice"]</div>
     </div>
 </div>
 <!--送信ボタン-->
