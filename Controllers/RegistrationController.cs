@@ -8,12 +8,11 @@ namespace Paperless_Empire.Controllers;
 public class RegistrationController : Controller{
     private IConfiguration _configuration;
     public RegistrationController(IConfiguration configuration){
-            _configuration = configuration;
+        _configuration = configuration;
     }
     public IActionResult Index(){
         return View();
     }
-
     [HttpPost]
     public IActionResult Check(RegistrationModel Model){
         //完了ボタンを押すとモデルの値が全部nullになるのでセッションに入力情報を格納
@@ -27,13 +26,14 @@ public class RegistrationController : Controller{
         var model = JsonConvert.DeserializeObject<RegistrationModel>(modelData!);
         /*
         ↑より下で、Slack送信文の上にデータベース追加処理を書いてね
+        model.〇〇でデータ引っ張れます
         これとSlack送信が終わったらページ表示させるように同期処理するか処理中ページを用意する
         */
         //↓教師へ承認案内Slack通知送信
         var Client = new HttpClient();
         var token = _configuration.GetConnectionString("SLACK_TOKEN");
         string channel = "#slackapi-test";
-        var text = $"【公欠届承認案内】\n新着の公欠届があります。\n\n----概要----\n学籍番号: {model!.Number}\n氏名: {model.Name}\n公欠日: {model.Date}\n\n詳細をこちらのURLから承認ページへアクセスし、承認/却下操作を行ってください。\nhttps://paperless-empire.site/TeachingStaff";
+        var text = $"【公欠届承認案内】\n新着の公欠届があります。\n\n----概要----\n学籍番号: {model!.Number}\n氏名: {model.Name}\n公欠日: {model.Date}\n\nこちらのURLから承認ページへアクセスし、詳細を確認の上承認/却下操作を行ってください。\nhttps://paperless-empire.site/TeachingStaff";
         var data = new StringContent($"token={token}&channel={channel}&text={text}",Encoding.UTF8,"application/x-www-form-urlencoded");
         var response = await Client.PostAsync("https://slack.com/api/chat.postMessage", data);
         var responseInString = await response.Content.ReadAsStringAsync();
